@@ -1,0 +1,6 @@
+if SHIELD_NOCTYL
+
+  config ZMK_KEYBOARD_NAME
+    default "Noctyl"
+
+endif
