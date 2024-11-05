@@ -20,6 +20,6 @@
 include:
   - board: nice_nano
     shield: noctyl
-    snippet: zmk-usb-logging
-  - board: nice_nano
-    shield: settings_reset
+  #   snippet: zmk-usb-logging
+  # - board: nice_nano
+  #   shield: settings_reset

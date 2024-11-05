@@ -9,13 +9,31 @@
 
         default_layer { // Layer 0
             // -------------------------------------
-            // |     Z     |     M     |     K     |
-            // |     A     |     B     |     C     |
-            // |     D     |     E     |     F     |
+            // RC(0,0) | RC(0,1) | RC(0,2) | RC(0,3) | RC(0,4) | RC(0,5)                |               RC(0,8) | RC(0,9) | RC(0,10) | RC(0,11) | RC(0,12) | RC(0,13)
+            // RC(1,0) | RC(1,1) | RC(1,2) | RC(1,3) | RC(1,4) | RC(1,5)                |               RC(1,8) | RC(1,9) | RC(1,10) | RC(1,11) | RC(1,12) | RC(1,13)
+            // RC(2,0) | RC(2,1) | RC(2,2) | RC(2,3) | RC(2,4) | RC(2,5)                |               RC(2,8) | RC(2,9) | RC(2,10) | RC(2,11) | RC(2,12) | RC(2,13)
+            // RC(3,0) | RC(3,1) | RC(3,2) | RC(3,3) | RC(3,4) | RC(3,5)                |               RC(3,8) | RC(3,9) | RC(3,10) | RC(3,11) | RC(3,12) | RC(3,13)
+            //                     RC(4,2) | RC(4,3)                                    |                                   RC(4,10) | RC(4,11)
+            //                                         RC(2,6) | RC(1,6) | RC(0,6)      |     RC(0,7) | RC(1,7) | RC(2,7)
+            //                                         RC(4,6) | RC(3,4)                |               RC(3,7) | RC(4,7)
+
+            // --------------------------------------------------------------------------------------------------------------------------------------------------
+            // PIPE   |  1  |  2  |  3  |  4  |  5                |               6  |  7  |  8  |  9  |  0   |   ?
+            // ESC    |  Q  |  W  |  E  |  R  |  T                |               Y  |  U  |  I  |  O  |  P   |   ´
+            // LSHIFT |  A  |  S  |  D  |  F  |  G                |               H  |  J  |  K  |  L  |  Ñ   |  UP
+            // CTRL   |  Z  |  X  |  C  |  V  |  B                |               N  |  M  | ,;  |  .: | DOWN |  ->
+            //                 >< | TAB                                                       -_ |  <-
+            //                            ALT | ALTGr | ´         |      BACK | Supr | RSHIFT
+            //                           SPACE| WINDWS            |            ENTER | SPACE
+
             bindings = <
-                &bt BT_CLR_ALL    &kp M    &kp K
-                &kp A    &kp B    &kp C
-                &kp D    &kp E    &kp F
+                &kp GRAVE   &kp N1      &kp N2     &kp N3      &kp N4     &kp N5                                  &kp N6    &kp N7    &kp N8     &kp N9    &kp N0     &kp MINUS
+                &kp ESC     &kp Q       &kp W      &kp E       &kp R      &kp T                                   &kp Y     &kp U     &kp I      &kp O     &kp P      &kp LBKT
+                &kp LSHFT   &kp A       &kp S      &kp D       &kp F      &kp G                                   &kp H     &kp J     &kp K      &kp L     &kp SEMI   &kp UP
+                &kp LCTRL   &kp Z       &kp X      &kp C       &kp V      &kp B                                   &kp N     &kp M     &kp COMMA  &kp DOT   &kp DOWN   &kp RIGHT
+                                        &kp BSLH   &kp TAB                                                                            &kp FSLH   &kp LEFT
+                                                            &kp LALT   &kp RALT    &kp LBKT         &kp BSPC    &kp DEL    &kp RSHIFT
+                                                            &kp SPACE  &kp LGUI                                 &kp ENTER  &kp SPACE
             >;
         };
     };
