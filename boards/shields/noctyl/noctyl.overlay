@@ -4,15 +4,15 @@
 / {
   chosen {
       zmk,physical-layout = &default_layout;
-      zmk,battery = &vbatt;
+      // zmk,battery = &vbatt;
   };
 
-  vbatt: vbatt {
-    compatible = "zmk,battery-voltage-divider";
-    io-channels = <&adc 2>;
-    output-ohms = <2000000>;
-    full-ohms = <(806000 + 2000000)>;
-};
+//   vbatt: vbatt {
+//     compatible = "zmk,battery-voltage-divider";
+//     io-channels = <&adc 2>;
+//     output-ohms = <2000000>;
+//     full-ohms = <(806000 + 2000000)>;
+// };
 };
 
 
